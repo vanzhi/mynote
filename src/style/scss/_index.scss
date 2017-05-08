@@ -1,5 +1,37 @@
-.logo {color:red;}
-.list {
-	line-height: 2;
-	li {border-bottom: 1px solid #ddd;}
+$btnwidth:60px;
+
+%formline {
+	vertical-align: middle;
+}
+
+.note-header {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	color: rgba(255,255,255,0.75);
+	background-color: #24292e;
+}
+.note-box {
+	position: relative;
+    margin: 30px 0;
+    border-radius: 5px;
+	border: 1px solid #d1d5da;
+	background-color: #f6f8fa;
+}
+.note-title {
+	margin: 30px 0;
+	padding: 20px;
+	border-radius: 5px;
+	border: 2px dashed rgba(27,31,35,0.3);
+}
+.note-form {
+	padding: 20px;
+}
+.note-add {
+	@extend %formline;
+	float: right;
+}
+input.note-input {
+	@extend %formline;
+	display: inline-block;
+	width: calc(100% - #{$btnwidth});
 }
