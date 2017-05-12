@@ -5,8 +5,7 @@ $btnwidth:60px;
 }
 
 .note-header {
-	padding-top: 12px;
-	padding-bottom: 12px;
+	padding: 12px 30px;
 	color: rgba(255,255,255,0.75);
 	background-color: #24292e;
 }
@@ -30,7 +29,7 @@ $btnwidth:60px;
 	@extend %formline;
 	float: right;
 }
-input.note-input {
+.note-input {
 	@extend %formline;
 	display: inline-block;
 	width: calc(100% - #{$btnwidth});

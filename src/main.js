@@ -10,18 +10,16 @@ import App from './App.vue'
 import routes from './config/routes'
 import templateRoutes from './config/templateRoutes'
 
-// 放在sass引入css文件会报错，也不知道为什么
-// import bootstrap from './style/3rd/bootstrap.css'
-
 // 引入element-ui
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
-import { Button, Select } from 'element-ui'
 
-console.log(Button, Select)
+// 引入样式
+import './style/style.scss'
 
 Vue.use(ElementUI);
 Vue.use(VueRouter);
+
 Vue.prototype.$api = api;
 
 const router = new VueRouter({
