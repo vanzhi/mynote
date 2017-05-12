@@ -31,3 +31,18 @@ $btnwidth:60px;
 	display: inline-block;
 	// width: calc(100% - #{$btnwidth});
 }
+.note-memo {
+	box-shadow: 1px 1px 1px #ccc;
+}
+.note-content-wrap {
+	& > ul {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		& > li {
+			width: 150px;
+		}
+	}
+}
