@@ -21,16 +21,13 @@ $btnwidth:60px;
 	padding: 20px;
 	border-radius: 5px;
 	border: 2px dashed rgba(27,31,35,0.3);
+	vertical-align: baseline;
 }
 .note-form {
 	padding: 20px;
 }
-.note-add {
-	@extend %formline;
-	float: right;
-}
 .note-input {
 	@extend %formline;
 	display: inline-block;
-	width: calc(100% - #{$btnwidth});
+	// width: calc(100% - #{$btnwidth});
 }

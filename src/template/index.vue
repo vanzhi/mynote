@@ -9,15 +9,25 @@
         </el-row>
         <el-row>
             <el-col :span="18" :offset="3">
-                <div class="note-title">what do you want to todo：</div>
+                <div class="note-title">
+                    <span>what do you want to todo：</span>
+                    <i class="el-icon-plus btn-plus"></i>
+                    <!--
+                    <i class="el-icon-minus btn-minus"></i>
+                    -->
+                </div>
                 <div class="note-box">
                     <div class="note-form">
-                        <el-input class="note-input" placeholder="tell something..."></el-input>
-                        <el-button type="primary" class="note-add">add</el-button>
+                        <el-color-picker class="f-l"></el-color-picker>
+                        <el-button type="primary" class="btn-add">add</el-button>
+                        <el-input class="mg-t-10" placeholder="title..."></el-input>
+                        <el-input class="mg-t-10" placeholder="content..." type="textarea" :rows="4"></el-input>
                     </div>
+                </div>
+                <div class="note-content-wrap">
                     <ul>
                         <li>
-                            <div class="note-memo">lalalsomething在这里写什么</div>
+                            
                         </li>
                     </ul>
                 </div>

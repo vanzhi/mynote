@@ -1,0 +1,19 @@
+.btn-plus {
+    float: right;
+    color: $baseColor;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    &.open {
+        color: $lighterBaseColor;
+        transform: rotate(45deg);
+    }
+}
+.btn-minus {
+    float: right;
+    color: $redColor;
+    cursor: pointer;
+}
+.btn-add {
+    @extend %formline;
+	float: right;
+}
