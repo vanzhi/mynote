@@ -18,7 +18,16 @@
                 </div>
                 <div class="note-box">
                     <div class="note-form">
-                        <el-color-picker class="f-l"></el-color-picker>
+                        <div class="simple-color-picker f-l">
+                            <span class="scp-preview"></span>
+                            <span class="scp-icon"></span>
+                            <ul class="scp-select-wrap">
+                                <li class="scp-select-view" style="background:#ccc;"></li>
+                                <li class="scp-select-view" style="background:#ccc;"></li>
+                                <li class="scp-select-view" style="background:#ccc;"></li>
+                                <li class="scp-select-view" style="background:#ccc;"></li>
+                            </ul>
+                        </div>
                         <el-button type="primary" class="btn-add">add</el-button>
                         <el-input class="mg-t-10" placeholder="title..."></el-input>
                         <el-input class="mg-t-10" placeholder="content..." type="textarea" :rows="4"></el-input>
@@ -30,9 +39,29 @@
                             <div class="note-memo">
                                 <div class="memo-bar">
                                     <el-color-picker class="f-l"></el-color-picker>
-                                    <i class="el-icon-check"></i>
-                                    <i class="el-icon-edit"></i>
                                     <i class="el-icon-close"></i>
+                                    <i class="el-icon-edit"></i>
+                                    <i class="el-icon-check"></i>
+                                </div> 
+                                <div class="memo-title">
+                                    <p>
+                                        lalala
+                                    </p>
+                                </div>
+                                <div class="memo-content">
+                                    <p>
+                                        lalalalalalalalal
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li >
+                            <div class="note-memo">
+                                <div class="memo-bar">
+                                    <el-color-picker class="f-l"></el-color-picker>
+                                    <i class="el-icon-close"></i>
+                                    <i class="el-icon-edit"></i>
+                                    <i class="el-icon-check"></i>
                                 </div> 
                             </div>
                         </li>
@@ -40,9 +69,9 @@
                             <div class="note-memo">
                                 <div class="memo-bar">
                                     <el-color-picker class="f-l"></el-color-picker>
-                                    <i class="el-icon-check"></i>
-                                    <i class="el-icon-edit"></i>
                                     <i class="el-icon-close"></i>
+                                    <i class="el-icon-edit"></i>
+                                    <i class="el-icon-check"></i>
                                 </div> 
                             </div>
                         </li>
@@ -50,9 +79,9 @@
                             <div class="note-memo">
                                 <div class="memo-bar">
                                     <el-color-picker class="f-l"></el-color-picker>
-                                    <i class="el-icon-check"></i>
-                                    <i class="el-icon-edit"></i>
                                     <i class="el-icon-close"></i>
+                                    <i class="el-icon-edit"></i>
+                                    <i class="el-icon-check"></i>
                                 </div> 
                             </div>
                         </li>
@@ -60,19 +89,9 @@
                             <div class="note-memo">
                                 <div class="memo-bar">
                                     <el-color-picker class="f-l"></el-color-picker>
-                                    <i class="el-icon-check"></i>
-                                    <i class="el-icon-edit"></i>
                                     <i class="el-icon-close"></i>
-                                </div> 
-                            </div>
-                        </li>
-                        <li >
-                            <div class="note-memo">
-                                <div class="memo-bar">
-                                    <el-color-picker class="f-l"></el-color-picker>
-                                    <i class="el-icon-check"></i>
                                     <i class="el-icon-edit"></i>
-                                    <i class="el-icon-close"></i>
+                                    <i class="el-icon-check"></i>
                                 </div> 
                             </div>
                         </li>
