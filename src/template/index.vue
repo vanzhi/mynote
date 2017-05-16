@@ -16,7 +16,7 @@
                     <i class="el-icon-minus btn-minus"></i>
                     -->
                 </div>
-                <div class="note-box">
+                <div class="note-box open">
                     <div class="note-form">
                         <div class="simple-color-picker f-l">
                             <span class="scp-preview"></span>
@@ -38,19 +38,22 @@
                         <li >
                             <div class="note-memo">
                                 <div class="memo-bar">
-                                    <el-color-picker class="f-l"></el-color-picker>
+                                    <div class="simple-color-picker f-l">
+                                        <span class="scp-preview"></span>
+                                        <span class="scp-icon"></span>
+                                    </div>
                                     <i class="el-icon-close"></i>
                                     <i class="el-icon-edit"></i>
                                     <i class="el-icon-check"></i>
                                 </div> 
-                                <div class="memo-title">
+                                <div class="memo-title" contenteditable="true">
                                     <p>
-                                        lalala
+                                        49版本以后跨域设置
                                     </p>
                                 </div>
-                                <div class="memo-content">
+                                <div class="memo-content" contenteditable="true">
                                     <p>
-                                        lalalalalalalalal
+                                        --disable-web-security --user-data-dir = C:\MyChromeDevUserData
                                     </p>
                                 </div>
                             </div>
@@ -63,6 +66,16 @@
                                     <i class="el-icon-edit"></i>
                                     <i class="el-icon-check"></i>
                                 </div> 
+                                <div class="memo-title" contenteditable="true">
+                                    <p>
+                                        49版本以后跨域设置
+                                    </p>
+                                </div>
+                                <div class="memo-content" contenteditable="true">
+                                    <p>
+                                        --disable-web-security --user-data-dir = C:\MyChromeDevUserData
+                                    </p>
+                                </div>
                             </div>
                         </li>
                         <li >
