@@ -4,12 +4,12 @@ export default {
     data() {
         return {
             lists: [],
-            opened: false
+            opened: false,
+            test: 111
         }
     },
     created() {
         // 组件创建完成后执行
-        
     },
     methods: {
         open: function(e) {
