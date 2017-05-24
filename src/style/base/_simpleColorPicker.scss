@@ -6,15 +6,17 @@ $defaultBg:#666;
 %defaultBorde {
     border: 1px solid #d1d5da;
 }
+
+.scp-preview {
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    border: 1px solid $defaultBg;
+}
+
 .simple-color-picker {
     position: relative;
     padding: 5px;
-    .scp-preview {
-        display: inline-block;
-        height: 22px;
-        width: 22px;
-        border: 1px solid $defaultBg;
-    }
     .scp-icon{
         position: relative;
         top: -6px;
@@ -27,25 +29,26 @@ $defaultBg:#666;
             content: "\E604";
         }
     }
-    .scp-select-wrap {
-        position: absolute;
-        top: 35px;
-        left: -10px;
-        padding: 10px 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        z-index: 10;
-        background: #fff;
-        box-shadow: 0 2px 4px rgba(0,0,0,.12),0 0 6px rgba(0,0,0,.12);
-        @extend %defaultBorde;
-        li.scp-select-view {
-            margin-right: 10px;
-            &:first-child {
-                margin-left: 10px;
-            }
-            border: none;
-            @extend .scp-preview;
+}
+
+.scp-select-wrap {
+    position: absolute;
+    top: 35px;
+    left: -10px;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 10;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,.12),0 0 6px rgba(0,0,0,.12);
+    @extend %defaultBorde;
+    li.scp-select-view {
+        margin-right: 10px;
+        &:first-child {
+            margin-left: 10px;
         }
+        border: none;
+        @extend .scp-preview;
     }
 }

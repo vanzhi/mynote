@@ -1,26 +1,32 @@
-<template id="base-elem" v-if="!a">
-    <div class="simple-color-picker f-l">
+<template id="base-elem">
+    <!-- todo 创建clickoutside指令 -->
+    <div class="simple-color-picker f-l" @click="show">
         <span class="scp-preview"></span>
         <span class="scp-icon"></span>
-        
+        <picker-down :showPopper="showPopper"></picker-down>
     </div>
 </template>
-<!--
-<template id="scope-elem" v-if="a">
-    <ul class="scp-select-wrap">
-        <li class="scp-select-view" style="background:#ccc;"></li>
-        <li class="scp-select-view" style="background:#ccc;"></li>
-        <li class="scp-select-view" style="background:#ccc;"></li>
-        <li class="scp-select-view" style="background:#ccc;"></li>
-    </ul>
-</template>
--->
 <script>
+    import pickerDown from './pickerDown.vue'
     export default {
         data() {
             return {
-                a : false
+                showPopper : false
             }
+        },
+        methods: {
+            show() {
+                this.showPopper = true;
+            },
+            hide() {
+                console.log(arguments)
+            }
+        },
+        mounted: function() {
+            
+        },
+        components: {
+            pickerDown
         }
     }
 </script>

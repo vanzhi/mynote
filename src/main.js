@@ -28,7 +28,7 @@ Vue.prototype.$api = api;
 const router = new VueRouter({
 	routes
 });
-Vue.component('simple-picker', simplePicker)
+Vue.component('simplePicker', simplePicker)
 new Vue ({
 	router,
 	el: '#app',

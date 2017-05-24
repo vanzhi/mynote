@@ -78,36 +78,6 @@
                                 </div>
                             </div>
                         </li>
-                        <li >
-                            <div class="note-memo">
-                                <div class="memo-bar">
-                                    <el-color-picker class="f-l"></el-color-picker>
-                                    <i class="el-icon-close"></i>
-                                    <i class="el-icon-edit"></i>
-                                    <i class="el-icon-check"></i>
-                                </div> 
-                            </div>
-                        </li>
-                        <li >
-                            <div class="note-memo">
-                                <div class="memo-bar">
-                                    <el-color-picker class="f-l"></el-color-picker>
-                                    <i class="el-icon-close"></i>
-                                    <i class="el-icon-edit"></i>
-                                    <i class="el-icon-check"></i>
-                                </div> 
-                            </div>
-                        </li>
-                        <li >
-                            <div class="note-memo">
-                                <div class="memo-bar">
-                                    <el-color-picker class="f-l"></el-color-picker>
-                                    <i class="el-icon-close"></i>
-                                    <i class="el-icon-edit"></i>
-                                    <i class="el-icon-check"></i>
-                                </div> 
-                            </div>
-                        </li>
                     </ul>
                 </div>
             </el-col>
@@ -116,6 +86,30 @@
 	</div>
 </template>
 <script type="text/javascript">
-	import exp from '../controller/index.js';
-	export default exp
+	import Vue from 'vue';
+
+    export default {
+        data() {
+            return {
+                lists: [],
+                opened: false,
+                test: 111
+            }
+        },
+        created() {
+            // 组件创建完成后执行
+        },
+        methods: {
+            open: function(e) {
+                this.opened = !this.opened;
+            },
+            get_data: function(params) {
+                var v = this;
+                if (!params) params = {};
+                v.$api.get('topics', params, function(r) {
+                    v.lists = r.data;
+                })
+            }
+        }
+    }
 </script>
