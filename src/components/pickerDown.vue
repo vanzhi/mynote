@@ -1,37 +1,49 @@
 <template id="scope-elem" v-if="a">
-    <ul class="scp-select-wrap" v-show="showPopper" style="style+'111'">
-        <li class="scp-select-view" style="background:#111;"></li>
-        <li class="scp-select-view" style="background:#ccc;"></li>
-        <li class="scp-select-view" style="background:#ccc;"></li>
-        <li class="scp-select-view" style="background:#ccc;"></li>
-    </ul>
+    <transition name="el-fade-in" @after-leave="doDestroy">
+        <ul class="scp-select-wrap" v-show="showPopper">
+            <template v-for="i in colors">
+                <li class="scp-select-view" :style="{'background':i}" :bxx="i" @click="setColor(i)" :color="i"></li>
+            </template>
+        </ul>
+    </transition>
 </template>
 <script>
+    import Popper from 'element-ui/lib/utils/vue-popper';
+
     export default {
         data() {
             return {
-                style: 'top:0;',
                 pos: {},
                 parentPos: {}
             }
         },
-        props: ['showPopper'],
+        mixins: [Popper],
+        props: ['colors', 'curColor'],
         methods: {
-            
+            setColor(color) {
+                
+            }
         },
         mounted() {
-            var {offsetHeight, offsetWidth, offsetTop, offsetLeft} = this.$parent.$el;
-            this.$parent.popperElm = this.$el;
-            this.parentPos = {offsetHeight, offsetWidth, offsetTop, offsetLeft};
-            this.pos = {top:(offsetTop + offsetHeight).toString(), left: (offsetLeft + 10).toString()};
+            this.$parent.popperElm = this.popperElm = this.$el;
+            this.referenceElm = this.$parent.$el;
+            // todo : 考虑边缘位置的情况，考虑调整窗口
+            // var {offsetHeight, offsetWidth, offsetTop, offsetLeft} = this.$parent.$el;
+            // this.$parent.popperElm = this.$el;
+            // this.parentPos = {offsetHeight, offsetWidth, offsetTop, offsetLeft};
+            // this.pos = {top:(eval(offsetTop + offsetHeight) + 'px'), left: (eval(offsetLeft + 10) + 'px')};
+            // window.onresize = (e)=> {
+                
+            // }
         },
         watch: {
-            showPopper: function(val) {
-                if (val) {
-            this.style = JSON.stringify(this.pos).replace(/\{|\}+/g, '').replace(/\,+/g, ';');
-                    document.body.appendChild(this.$el);
-                }
-            }
+            // showPopper: function(val) {
+                // v-model传入的showPicker即为this.value，vue-popper中watch了this.value，且this.showPopper = this.value
+                // if (val) {
+                //     this.style = this.pos;
+                //     document.body.appendChild(this.$el);
+                // }
+            // }
         }
     }
 </script>

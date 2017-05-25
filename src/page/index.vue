@@ -82,7 +82,7 @@
                 </div>
             </el-col>
         </el-row>
-		<simple-picker></simple-picker>
+		<simple-picker :colors="colors"></simple-picker>
 	</div>
 </template>
 <script type="text/javascript">
@@ -93,7 +93,8 @@
             return {
                 lists: [],
                 opened: false,
-                test: 111
+                test: 111,
+                colors: ['#e6836c', "#e5dc4b", "#a4c4bf", "#177d7f", "#0181c8", "#666666"]
             }
         },
         created() {
