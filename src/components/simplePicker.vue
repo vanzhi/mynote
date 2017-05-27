@@ -1,7 +1,7 @@
 <template id="base-elem">
     <!-- todo 创建clickoutside指令 -->
     <div class="simple-color-picker f-l" @click="showPicker=!showPicker" v-clickoutside="hide">
-        <span class="scp-preview" :style="{'background':curColor}"></span>
+        <span class="scp-preview" :style="{'background':curColor}" @changeColor="changeColor"></span>
         <span class="scp-icon"></span>
         <picker-down ref="dropdown" :colors="colors" v-model="showPicker"></picker-down>
     </div>
@@ -25,6 +25,9 @@
         methods: {
             hide() {
                 this.showPicker = false;
+            },
+            changeColor: function(color) {
+                console.log(2, color);
             }
         },
         mounted: function() {

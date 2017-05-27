@@ -21,7 +21,8 @@
         props: ['colors', 'curColor'],
         methods: {
             setColor(color) {
-                
+                console.log(1, color);
+                this.$emit('changeColor', color);
             }
         },
         mounted() {
