@@ -38,10 +38,7 @@
                         <li >
                             <div class="note-memo">
                                 <div class="memo-bar">
-                                    <div class="simple-color-picker f-l">
-                                        <span class="scp-preview"></span>
-                                        <span class="scp-icon"></span>
-                                    </div>
+                                    <simple-picker :colors="colors" v-model="mycolor" @change="colorChage"></simple-picker>
                                     <i class="el-icon-close"></i>
                                     <i class="el-icon-edit"></i>
                                     <i class="el-icon-check"></i>
@@ -61,7 +58,8 @@
                         <li >
                             <div class="note-memo">
                                 <div class="memo-bar">
-                                    <el-color-picker class="f-l"></el-color-picker>
+                                    <simple-picker :colors="colors" v-model="mycolor" @change="colorChage"></simple-picker>
+                                    <el-color-picker class="f-l" v-model="colorsss" @change="resetElemColor"></el-color-picker>
                                     <i class="el-icon-close"></i>
                                     <i class="el-icon-edit"></i>
                                     <i class="el-icon-check"></i>
@@ -82,15 +80,17 @@
                 </div>
             </el-col>
         </el-row>
-		<simple-picker :colors="colors"></simple-picker>
 	</div>
 </template>
 <script type="text/javascript">
 	import Vue from 'vue';
+    import simplePicker from '../components/simplePicker/simplePicker.vue';
 
     export default {
         data() {
             return {
+                colorsss: '#666',
+                mycolor: '#666666',
                 lists: [],
                 opened: false,
                 test: 111,
@@ -99,8 +99,15 @@
         },
         created() {
             // 组件创建完成后执行
+            
         },
         methods: {
+            resetElemColor(c) {
+                console.log(arguments)
+            },
+            colorChage: function(color) {
+                // console.log(color);
+            },
             open: function(e) {
                 this.opened = !this.opened;
             },
@@ -111,6 +118,9 @@
                     v.lists = r.data;
                 })
             }
+        },
+        components: {
+            simplePicker
         }
     }
 </script>

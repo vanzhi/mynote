@@ -17,9 +17,6 @@ import 'element-ui/lib/theme-default/index.css'
 // 引入样式
 import './style/style.scss'
 
-// 组件
-import simplePicker from './components/simplePicker.vue'
-
 Vue.use(ElementUI);
 Vue.use(VueRouter);
 
@@ -28,7 +25,7 @@ Vue.prototype.$api = api;
 const router = new VueRouter({
 	routes
 });
-Vue.component('simplePicker', simplePicker)
+// Vue.component('simplePicker', simplePicker)
 new Vue ({
 	router,
 	el: '#app',
