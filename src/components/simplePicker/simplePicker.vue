@@ -1,6 +1,6 @@
 <template id="base-elem">
     <!-- clickoutside指令 用了element的 -->
-    <div class="simple-color-picker f-l" @click="showPicker=!showPicker" v-clickoutside="hide" :aaa="myccc">
+    <div class="simple-color-picker f-l" @click="showPicker=!showPicker" v-clickoutside="hide">
         <span class="scp-preview" :style="{'background':curColor}" @changeColor="changeColor"></span>
         <span class="scp-icon"></span>
         <picker-down ref="dropdown" @changeColor="changeColor" :colors="colors" v-model="showPicker"></picker-down>
@@ -22,7 +22,9 @@
             },
             colors: {
                 type : Array,
-                default: ['#ccc', '#ccc', '#ccc', '#ccc', '#ccc', '#ccc', '#ccc']
+                default: function() {
+                    return ['#e6836c', "#e5dc4b", "#a4c4bf", "#177d7f", "#0181c8", "#666666"]
+                }
             }
         },
         methods: {
@@ -39,7 +41,14 @@
             }
         },
         mounted: function() {
+            var color = this.colors[this.colors.length - 1];
             this.popperElm = this.$refs.dropdown.$el;
+            if (this.value) {
+                this.curColor = this.value;
+            } else {
+                this.curColor = color;
+                this.$emit('input', color);
+            }
         },
         directives: { Clickoutside },
         components: {

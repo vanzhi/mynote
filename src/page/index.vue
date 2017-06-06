@@ -18,16 +18,7 @@
                 </div>
                 <div class="note-box" :class="{'open' : opened}">
                     <div class="note-form">
-                        <div class="simple-color-picker f-l">
-                            <span class="scp-preview"></span>
-                            <span class="scp-icon"></span>
-                            <ul class="scp-select-wrap">
-                                <li class="scp-select-view" style="background:#ccc;"></li>
-                                <li class="scp-select-view" style="background:#ccc;"></li>
-                                <li class="scp-select-view" style="background:#ccc;"></li>
-                                <li class="scp-select-view" style="background:#ccc;"></li>
-                            </ul>
-                        </div>
+                        <simple-picker v-model="mycolor" @change="colorChage"></simple-picker>
                         <el-button type="primary" class="btn-add">add</el-button>
                         <el-input class="mg-t-10" placeholder="title..."></el-input>
                         <el-input class="mg-t-10" placeholder="content..." resize="none" type="textarea" :rows="4"></el-input>
@@ -35,46 +26,8 @@
                 </div>
                 <div class="note-content-wrap">
                     <ul>
-                        <li >
-                            <div class="note-memo">
-                                <div class="memo-bar">
-                                    <simple-picker :colors="colors" v-model="mycolor" @change="colorChage"></simple-picker>
-                                    <i class="el-icon-close"></i>
-                                    <i class="el-icon-edit"></i>
-                                    <i class="el-icon-check"></i>
-                                </div> 
-                                <div class="memo-title" contenteditable="true">
-                                    <p>
-                                        49版本以后跨域设置
-                                    </p>
-                                </div>
-                                <div class="memo-content" contenteditable="true">
-                                    <p>
-                                        --disable-web-security --user-data-dir = C:\MyChromeDevUserData
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li >
-                            <div class="note-memo">
-                                <div class="memo-bar">
-                                    <simple-picker :colors="colors" v-model="mycolor" @change="colorChage"></simple-picker>
-                                    <el-color-picker class="f-l" v-model="colorsss" @change="resetElemColor"></el-color-picker>
-                                    <i class="el-icon-close"></i>
-                                    <i class="el-icon-edit"></i>
-                                    <i class="el-icon-check"></i>
-                                </div> 
-                                <div class="memo-title" contenteditable="true">
-                                    <p>
-                                        49版本以后跨域设置
-                                    </p>
-                                </div>
-                                <div class="memo-content" contenteditable="true">
-                                    <p>
-                                        --disable-web-security --user-data-dir = C:\MyChromeDevUserData
-                                    </p>
-                                </div>
-                            </div>
+                        <li v-for="item in infos">
+                            <note-pad :model="item"></note-pad>
                         </li>
                     </ul>
                 </div>
@@ -83,18 +36,24 @@
 	</div>
 </template>
 <script type="text/javascript">
-	import Vue from 'vue';
+    import notePad from '../components/notePad/notePad.vue';
     import simplePicker from '../components/simplePicker/simplePicker.vue';
 
     export default {
         data() {
             return {
-                colorsss: '#666',
-                mycolor: '#666666',
+                infos:[{
+                    id: '1_xxxxxxxxxxxxx',
+                    title: '第一份',
+                    content: '内容内容内容内容内容内容',
+                    date: '2016-10-12 09:18:32',
+                    color: ''
+                }],
+                listName: '',
+                mycolor: '',
                 lists: [],
                 opened: false,
                 test: 111,
-                colors: ['#e6836c', "#e5dc4b", "#a4c4bf", "#177d7f", "#0181c8", "#666666"]
             }
         },
         created() {
@@ -106,7 +65,7 @@
                 console.log(arguments)
             },
             colorChage: function(color) {
-                // console.log(color);
+                console.log(color);
             },
             open: function(e) {
                 this.opened = !this.opened;
@@ -120,6 +79,7 @@
             }
         },
         components: {
+            notePad,
             simplePicker
         }
     }

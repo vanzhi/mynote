@@ -17,7 +17,7 @@ $btnwidth:60px;
 	overflow: hidden;
     border-radius: 5px;
 	border: 1px solid #d1d5da;
-	background-color: $bgColor;
+	// background-color: $bgColor;
 	opacity: 0;
 	transition-duration: 0.5s;
 	&.open {
@@ -43,9 +43,26 @@ $btnwidth:60px;
 	// width: calc(100% - #{$btnwidth});
 }
 .note-memo {
+	// position: relative;
 	// box-shadow: 1px 1px 3px #f2f2f2;
 	border: 1px solid #f6f6f6;
 	background-color: $bgColor;
+	// text-shadow: 1px 1px 1px #fff;
+	border-radius: 5px;
+	&.done {
+		.memo-title, .memo-content {
+			text-decoration: line-through;
+		}
+	}
+	// &:before {
+	// 	position: absolute;
+	// 	content: " ";
+	// 	top: -10px;
+	// 	bottom: -10px;
+	// 	left: -10px;
+	// 	right: -10px;
+	// 	border: 2px dashed rgba(27, 31, 35, 0.3);
+	// }
 }
 .note-content-wrap {
 	& > ul {
@@ -72,26 +89,33 @@ $btnwidth:60px;
 	}
 	& > *:first-child {
 		float: left;
-		line-height: 40px;
 	}
 	& > .el-icon-close, & > .el-icon-edit, & > .el-icon-check {
 		margin-right: 10px;
-		color: #666;
+		color: inherit;
 		font-size: 12px;
 	}
 }
 .memo-title {
 	padding: 0 20px;
-	height: 40px;
+	min-height: 40px;
 	line-height: 40px;
 	font-size: 14px;
 	font-weight: bold;
+	border-bottom: 2px #fff dashed;
 }
 .memo-content {
-	padding: 0 20px 10px 20px;
+	padding: 10px 20px 0;
 	min-height: 30px;
-	line-height: 30px;
+	line-height: 20px;
 	font-size: 12px;
+}
+.memo-date {
+	text-align: right;
+	font-size: 10px;
+	opacity: 0.6;
+	padding-right: 10px;
+	line-height: 30px;
 }
 @media screen and (min-width: 768px) {
 	.note-content-wrap > ul > li {

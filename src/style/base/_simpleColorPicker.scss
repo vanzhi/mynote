@@ -12,17 +12,25 @@ $defaultBg:#666;
     height: 22px;
     width: 22px;
     border: 1px solid $defaultBg;
+    box-shadow: 0 0 1px #aaa inset;
 }
 
 .simple-color-picker {
     position: relative;
-    padding: 5px;
+    clear:both;
+    overflow: hidden;
+    width: 48px;
+    padding: 10px;
+    .scp-preview {
+        float: left;
+    }
     .scp-icon{
         position: relative;
-        top: -6px;
-        left: 6px;
-        display: inline-block;
-        color: $defaultBg;
+        top: 8px;
+        left: 12px;
+        float: left;
+        line-height: 1;
+        color: inherit;
         font-size: 12px;
         font-family: element-icons!important;
         &:before {
