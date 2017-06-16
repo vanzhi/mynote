@@ -4,6 +4,7 @@
             <el-col :span="24">
                 <header class="note-header">
                     <span class="note-logo">my note</span>
+                    <!-- todo 此处增加搜索 -->
                 </header>
             </el-col>
         </el-row>
